@@ -1,0 +1,34 @@
+PUSH 0
+POP a
+PUSH 1
+POP b
+PUSH 5
+POP n
+PUSH n
+PUSH 0
+GT
+BRANCH_IF_FALSE false_0
+loopStart_2:
+PUSH n
+PUSH 0
+NEQ
+BRANCH_IF_FALSE loopEnd_3
+PUSH n
+PUSH 1
+SUB
+POP n
+PUSH a
+PUSH b
+ADD
+POP t
+PUSH b
+POP a
+PUSH t
+POP b
+JUMP loopStart_2
+loopEnd_3:
+JUMP endIf_1
+false_0:
+endIf_1:
+PUSH a
+RETURN
